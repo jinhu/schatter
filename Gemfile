@@ -42,4 +42,14 @@ else
   gem 'mysql2'
 end
 
+group :test do
+  gem 'factory_girl',       '2.0.2'      # 2.0.3 breaks loading factories with a Duplication Error
+  gem 'factory_girl_rails', '~> 1.1'
+  gem 'rspec-rails',        '~> 2.6'
+  gem 'cucumber-rails',     '1.0.6'    
+  gem 'wirble'
+  gem 'simplecov', '>= 0.4.0', :require => false
+  gem 'database_cleaner'
+  gem 'spork', '> 0.9.0.rc'
+end
 
