@@ -11,7 +11,7 @@ Feature: Manage Projects
   
   Scenario: Create Valid Project
     Given I have no projects
-    And I am on the list of offertes
+    And I am on the list of projects
     When I follow "Create New"
     And I fill in "Name" with "Nefit"
     And I fill in "Duration" with "180"
@@ -19,4 +19,3 @@ Feature: Manage Projects
     Then I should see "Nefit"
     And I should see "180"
     And I should have 1 project
-
