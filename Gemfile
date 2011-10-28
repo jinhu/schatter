@@ -23,6 +23,9 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
+
+gem 'active_scaffold'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -31,4 +34,12 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+ 
+if defined?(JRUBY_VERSION)
+  gem 'activerecord-jdbc-adapter'
+  gem 'jdbc-mysql', :require => false
+else
+  gem 'mysql2'
+end
+
 
