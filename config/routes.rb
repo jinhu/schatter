@@ -1,4 +1,6 @@
 Schatter::Application.routes.draw do
+  resources :features do as_routes end
+
   resources :projects do as_routes end
 
   # The priority is based upon order of creation:
