@@ -1,4 +1,6 @@
 Schatter::Application.routes.draw do
+  resources :organizations do as_routes end
+
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"

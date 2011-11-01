@@ -4,71 +4,14 @@
   <title>Schatter</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag 'mobile' if mobile_device? %>
-
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  <header>
-    <hgroup id=logo>
-      <h1>Page title</h1>
-      <h2>Page subtitle</h2>
-      </hgroup>
-<hgroup id=toolbar>
-	<% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <%= link_to "Log out", logout_path %>
-<% else %>
-  <%= link_to "Sign up", signup_path %> or
-  <%= link_to "log in", login_path %>.
-<% end %> 
-    </hgroup>
-  </header>
-
-  <nav>
-   <ul>
-     Navigation...
-   </ul>
-  </nav>
-  <section>
-<div id="table">
-			<div id ="book">
-				<div class="cover back" id="back-cover">Back cover</div>
-				<div class="page" id="page-1"><div class="shadow"></div>page 1</div>
-				<div class="page" id="page-2"><div class="shadow"></div>page 2</div>
-				<div class="page" id="page-1"><div class="shadow"></div>page 3</div>
-				<div class="page" id="page-2"><div class="shadow"></div>page 4</div>
-				<div class="page" id="page-1"><div class="shadow"></div>page 5</div>
-				<div class="page" id="page-2"><div class="shadow"></div>page 6</div>
-				<div class="page" id="page-1"><div class="shadow"></div>page 7</div>
-				<div class="page" id="page-2"><div class="shadow"></div>page 8</div>
-				<div class="page" id="page-1"><div class="shadow"></div>page 9</div>
-				<div class="page" id="page-2"><div class="shadow"></div>page 10</div>
-				<div class="cover front" id="front-cover"> Front cover</div>
-			</div>
-		</div>
-	</div>
-  </section>
-<%= yield %>
-
-  <aside>
-   Top links...
-  </aside>
-
-  <figure>
-    <img src="..."/>
-    <figcaption>Chart 1.1</figcaption>
-  </figure>
-
-  <footer>
-   Copyright ©
-   <time datetime="2010-11-08">2010</time>.
-  <% if mobile_device? %>
-    <%= link_to "Full Site", :mobile => 0 %>
-  <% else %>
-    <%= link_to "Mobile Site", :mobile => 1 %>
-  <% end %>
-  </footer>
-</body>
+<%=render :partial=>'layouts/header' %>
+<%=render :partial=>'layouts/navigation' %>
+<section><%= yield %></section>
+<%=render :partial=>'layouts/menu' %>
+<%=render :partial=>'layouts/footer' %>
 </body>
 </html>
