@@ -7,4 +7,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require active_scaffold
-//= require_tree .
+
+
+$(function(){
+	$('.cover, .page').click(function(){
+			$(this).toggleClass('flipped');
+			// if($(this).hasClass('flipped')){
+			// 	this.style.zIndex = z++;
+			// }else{
+			// 	this.style.zIndex = z--;
+			// }
+			})
+	});	
