@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .sass-cache/
 active_scaffold/**
+vendor/bundle/jruby
