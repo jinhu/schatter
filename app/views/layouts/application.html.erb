@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html manifest="/application.manifest">
 <head>
-  <title>Schatter</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <title>Schatter Desktop</title>
+  <%= stylesheet_link_tag    (mobile_device? ? "mobile" : "application") %>
+  <%= javascript_include_tag (mobile_device? ? "mobile" : "application") %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
 <%=render :partial=>'header' %>
 <%=render :partial=>'navigation' %>
-<section><%= yield %></section>
+<section><p>
+  <% if mobile_device? %>
+    <%= link_to "Full Site", :mobile => 0 %>
+  <% else %>
+    <%= link_to "Mobile Site", :mobile => 1 %>
+  <% end %>
+</p>
+<%= yield %></section>
 <%=render :partial=>'menu' %>
 <%=render :partial=>'footer' %>
 </body>

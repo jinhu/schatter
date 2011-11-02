@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-
+  respond_to :html, :json. :mobile
 def new
   @user = User.new
+  respond_with(@user)
 end
 
 def create

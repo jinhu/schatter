@@ -1,0 +1,16 @@
+  <nav id='#navigation'>
+ 	<header>
+	<% if current_user %>
+  <h1>Logged in as <%= current_user.email %></h1>
+  <%end%>
+	</header>
+
+   <ul>
+     <li>food</li>
+     <li>drink</li>
+     <li>sleep</li>
+     <li>sport</li>
+     <li>play</li>
+   </ul>
+  </nav>
+

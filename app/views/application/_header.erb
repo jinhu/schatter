@@ -1,0 +1,23 @@
+  <header>
+<header>
+	<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to "Log out", logout_path, :class=>'back'%>
+<% else %>
+  <%= link_to "log in", login_path, :class=>'button' %>.
+<% end %> 
+    </header>
+     <section>
+      <h1>Page title</h1>
+      <h2>Page subtitle</h2>
+      </section>
+      <ul>
+      	<li><a href='#navigation' class='arrow'>Navigation</a></li>
+      	<li><a href='#crud'>Crud</a></li>
+      	<li><a href='#navigation'>book</a></li>
+      	<li><a href='#about'>about</a></li>
+      </ul>
+       <%= link_to "Sign up", signup_path, :class=>'whiteButton' %>
+
+  </header>
+
