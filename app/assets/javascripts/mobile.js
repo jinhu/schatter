@@ -4,8 +4,8 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 // require jquery
-//= require jquery-1.6.4
-//= require jquery_ujs
+//= require jquery-1.4.2
+// require jquery_ujs
 //= require jqtouch
             $.jQTouch({
                 icon: 'icon.png',
