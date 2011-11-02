@@ -1,10 +1,10 @@
   <header>
 <header>
-	<% if current_user %>
+<% if current_user %>
   Logged in as <%= current_user.email %>.
-  <%= link_to "Log out", logout_path, :class=>'back'%>
+  <%= link_to "Log out", logout_path,:format=>:json, :class=>'back'%>
 <% else %>
-  <%= link_to "log in", login_path, :class=>'button' %>.
+  <%= link_to "log in", login_path,:format=>:json, :class=>'button' %>
 <% end %> 
     </header>
      <section>
@@ -17,7 +17,7 @@
       	<li><a href='#navigation'>book</a></li>
       	<li><a href='#about'>about</a></li>
       </ul>
-       <%= link_to "Sign up", signup_path, :class=>'whiteButton' %>
+      <%= link_to "Sign up", signup_path, :class=>'whiteButton', :id=>'sign_up' %>
 
   </header>
 
