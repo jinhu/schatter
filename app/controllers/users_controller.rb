@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
-  respond_to :html, :json, :mobile
+  #respond_to :html, :json, :mobile
 def new
   @user = User.new
-  respond_with(@user)
+  render :layout=> !request.xhr? 
 end
 
 def create
   @user = User.new(params[:user])
   if @user.save
-    redirect_to root_url, :notice => "Signed up!"
+     render  :layout=> !request.xhr?
   else
-    render :new,  :layout=> request.xhr?
+    render :new,  :layout=> !request.xhr?
 
   end
 end

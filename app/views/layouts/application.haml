@@ -1,0 +1,13 @@
+!!!
+%html{:manifest => "/application.manifest"}
+  %head
+    %title Schatter Desktop
+    = stylesheet_link_tag    (mobile_device? ? "mobile" : "application")
+    = javascript_include_tag (mobile_device? ? "mobile" : "application")
+    = csrf_meta_tags
+  %body
+    = render :partial=>'header'
+    = render :partial=>'navigation'
+    = yield
+    = render :partial=>'menu'
+    = render :partial=>'footer'

@@ -1,0 +1,8 @@
+- title "Projects"
+%ul
+  - for project in @records
+    %li.arrow
+      = link_to h(project.name), project
+      %small.counter < %= project.tasks.size % >
+%ul
+  %li.arrow= link_to "New Project", new_project_path

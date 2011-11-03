@@ -1,4 +1,6 @@
 Schatter::Application.routes.draw do
+  resources :products
+
   resources :organizations do as_routes end
 
   get "logout" => "sessions#destroy", :as => "logout"

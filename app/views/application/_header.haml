@@ -1,0 +1,21 @@
+%header#home
+  %header
+    - if current_user
+      Logged in as #{current_user.email}.
+      \#{link_to "Log out", logout_path,:format=>:json, :class=>'back'}
+    - else
+      = link_to "log in", login_path,:format=>:json, :class=>'button'
+  %section
+    =image_tag "logo.png", :class=>'logo'
+    %h1 Schatter
+    %h2 A project management tool
+  %ul#toolbar
+    %li
+      %a.arrow{:href => "#navigation"} Navigation
+    %li
+      %a{:href => "#crud"} Crud
+    %li
+      %a{:href => "#navigation"} book
+    %li
+      %a{:href => "#about"} about
+  = link_to "Sign up", signup_path, :class=>'whiteButton', :id=>'sign_up'

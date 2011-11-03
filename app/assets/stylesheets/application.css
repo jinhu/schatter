@@ -107,7 +107,7 @@ header {
 	top:0;
 	left:0;
 	height:100px;
-	width:100%;
+	width:1260px;
 	border: solid 1px;
 	-webkit-box-shadow: grey 0px 10px 100px;
 	background:#fff;
@@ -135,7 +135,7 @@ footer{
 	left:0;
 	top:640px;
 	height:50px;
-	width:100%;
+	width:1260px;
 	border: solid 1px;
 	-webkit-box-shadow: grey 0px -10px 100px;
 	background:#fff;
@@ -152,7 +152,7 @@ nav{
 }
 aside{
 	position: absolute;
-	left:1040px;
+	left:1060px;
 	top:120px;
 	height:500px;
 	width:200px;
@@ -162,10 +162,56 @@ aside{
 section{
 	position: absolute;
 	left:220px;
-	top:135px;
+	top:120px;
 	height:480px;
 	width:800px;
 
 	-webkit-box-shadow: grey 0px 0px 100px;
 	background:#fff;
+}
+body> *>header {
+	position: absolute;
+	top:10px;
+	left:10px;
+	height:30px;
+	width:50%;
+	border: solid 1px;
+	-webkit-box-shadow: grey 0px 10px 100px;
+	background:#ddf;
+	display:none;
+
+	
+}
+body> *>section{
+	position: absolute;
+	top:35px;
+	height:80px;
+	width:100%;
+	left:0px;
+	background:#fff;
+	display:none;
+}
+body> footer >section{
+	display:block;
+	top:0px;
+
+}
+#sign_up{
+	position: absolute;
+	font-size:30px;
+	top:35px;
+	left:1000px;
+	background:#aaa;
+	-webkit-box-shadow: grey 0px -0px 30px;
+}
+ul#toolbar {
+	margin-top:35px;
+}
+ul#toolbar li{
+	font-size:30px;
+	background:#aaa;
+	-webkit-box-shadow: grey 0px -0px 30px;
+	display: inline;
+	margin-left: 40px;
+
 }

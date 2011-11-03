@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 def new
-    render  :layout=> !request.xhr?
+  @user = User.new
+  render  :layout=> !request.xhr?
 end
 def create
   user = login(params[:email], params[:password], params[:remember_me])
