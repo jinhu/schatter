@@ -159,7 +159,7 @@ aside{
 	-webkit-box-shadow: grey -10px 0px 100px;
 	background:#fff;
 }
-section{
+body>section, body>form{
 	position: absolute;
 	left:220px;
 	top:120px;
@@ -191,6 +191,16 @@ body> *>section{
 	background:#fff;
 	display:none;
 }
+body> section>section,body> form>section{
+	position: absolute;
+	top:35px;
+	height:80px;
+	width:100%;
+	left:0px;
+	background:#fff;
+	display:block;
+}
+
 body> footer >section{
 	display:block;
 	top:0px;

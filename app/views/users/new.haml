@@ -1,4 +1,4 @@
-= form_for @user do |f|
+= form_for @user  do |f|
   %header.toolbar
     %a.back{:href => "#"}  back
   %section
@@ -12,4 +12,5 @@
       %li= f.text_field :email, :placeholder=>:email
       %li= f.password_field :password, :placeholder=>:password
       %li= f.password_field :password_confirmation,:placeholder=>:password_confirmation
+      %li=f.submit 'sign up'
     = link_to "signup", signup_path, :class=>'whiteButton', :id=>'signup'
