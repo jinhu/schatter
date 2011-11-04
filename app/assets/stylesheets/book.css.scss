@@ -1,0 +1,14 @@
+#table{
+  background-image: asset-url('table.jpg', image);
+  .page{
+      position: relative;
+      left:400px;
+      width: 385px;
+      height: 455px;
+      overflow: hidden;
+      -webkit-transition: -webkit-transform 1s ease-in;
+      -webkit-transform-origin: 0px 0;
+      -webkit-transform: translateZ(2px) rotateY(0deg);
+      background-image: asset-url('pinstripes.png',image);
+    }
+}
