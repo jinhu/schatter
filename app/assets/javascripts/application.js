@@ -10,8 +10,12 @@
 
 
 $(function(){
-	$('.cover, .page').click(function(){
+	$('.page').click(function(){
+			//$(this).("side:nth-child(1)").css('z-index','19');
+			//$(this).("side:nth-child(1)").css('z-index','20');
 			$(this).toggleClass('flipped');
+			//$(this).css('-webkit-transform:', 'translateZ(3px)');
+			
 			// if($(this).hasClass('flipped')){
 			// 	this.style.zIndex = z++;
 			// }else{

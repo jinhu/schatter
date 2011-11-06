@@ -1,14 +1,62 @@
 #table{
   background-image: asset-url('table.jpg', image);
+  -webkit-transform-style: preserve-3d; 
+  -webkit-perspective: 500;
+  -webkit-perspective: 153;
+  -webkit-perspective-origin-x: 5%;
+  -webkit-perspective-origin-y: 50%;
   .page{
-      position: relative;
-      left:400px;
+    position: absolute;
+    top:10px;
+    left:400px;
+    width: 385px;
+    height: 455px;
+    //-webkit-transition: all 2s ;
+    //-webkit-transform-origin: 400px 0;
+    .side{
+      position: absolute;
+      background-image: asset-url( 'book_page_left.png',image);
+      -webkit-transition: all 2s ;
+   }
+    .left{
+      left:-385px;
       width: 385px;
       height: 455px;
-      overflow: hidden;
-      -webkit-transition: -webkit-transform 1s ease-in;
-      -webkit-transform-origin: 0px 0;
-      -webkit-transform: translateZ(2px) rotateY(0deg);
-      background-image: asset-url('pinstripes.png',image);
+      -webkit-transform-origin: 385px 0;
+      z-index: 18;
+      -webkit-transform: rotateY(-180deg);
     }
+    .right{
+      left:0px;
+      width: 385px;
+      height: 455px;
+      -webkit-transform-origin: 0px 0;
+      z-index: 19;
+      -webkit-transform: rotateY(0deg);
+    }
+    .cover.front{
+      background-image: asset-url( 'book_cover_front.png',image);
+      //-webkit-transform: translateZ(1px) rotateY(0deg);
+    }
+    .inside.front{
+      background-image: asset-url( 'book_cover_front_inside.png',image);
+      //-webkit-transform: translateZ(2px) rotateY(0deg);
+    }
+    .cover.back{
+      background-image: asset-url( 'book_cover_back.png',image);
+    }
+    .inside.back{
+      background-image: asset-url( 'book_cover_back_inside.png',image);
+    }
+  }
+  .page.flipped{
+    .side.right{
+      -webkit-transform: rotateY(180deg);
+    }
+    .side.left{
+      -webkit-transform: rotateY(0deg);
+      z-index: 20;
+    }
+  }
+    
 }

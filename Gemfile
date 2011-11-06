@@ -50,6 +50,7 @@ group :test, :development do
   gem 'guard-spork'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'rack-offline'
 end
 
 
