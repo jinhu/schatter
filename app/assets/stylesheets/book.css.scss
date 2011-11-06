@@ -25,6 +25,7 @@
       -webkit-transform-origin: 385px 0;
       z-index: 18;
       -webkit-transform: rotateY(-180deg);
+
     }
     .right{
       left:0px;
@@ -49,7 +50,8 @@
       background-image: asset-url( 'book_cover_back_inside.png',image);
     }
   }
-  .page.flipped{
+  .page.flipped{      
+    z-index:1;
     .side.right{
       -webkit-transform: rotateY(180deg);
     }
