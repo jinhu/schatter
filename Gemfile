@@ -45,6 +45,11 @@ group :test, :development do
   gem 'wirble'
   gem 'simplecov', '>= 0.4.0', :require => false
   gem 'database_cleaner'
+
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+
   gem 'spork', '> 0.9.0.rc'
   gem 'guard'
   gem 'guard-spork'
