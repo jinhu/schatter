@@ -7,7 +7,7 @@
 //= require jquery-1.4.2
 // require jquery_ujs
 //= require jqtouch
-            $.jQTouch({
-                icon: 'icon.png',
-                startupScreen: 'img/startup.png'
-            });
+  $.jQTouch({
+    icon: 'icon.png',
+    startupScreen: 'img/startup.png'
+  });
