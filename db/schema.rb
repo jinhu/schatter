@@ -10,12 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108205645) do
+ActiveRecord::Schema.define(:version => 20111111135901) do
 
   create_table "features", :force => true do |t|
     t.integer  "project_id"
     t.string   "name"
-    t.string   "kind"
+    t.integer  "kind_id"
     t.text     "description"
     t.integer  "complexity"
     t.integer  "dependancy"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20111108205645) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "kinds", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20111108205645) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
-    t.string   "kind"
+    t.integer  "kind_id"
     t.integer  "duration"
     t.date     "started_at"
     t.date     "end_at"
@@ -73,6 +81,15 @@ ActiveRecord::Schema.define(:version => 20111108205645) do
     t.datetime "updated_at"
   end
 
+  create_table "tasks", :force => true do |t|
+    t.integer  "feature_id"
+    t.string   "name"
+    t.integer  "duration"
+    t.integer  "status_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "crypted_password"
@@ -81,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20111108205645) do
     t.datetime "updated_at"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
+    t.string   "name"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"

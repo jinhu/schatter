@@ -1,4 +1,8 @@
 Schatter::Application.routes.draw do
+  resources :tasks do as_routes end
+
+  resources :kinds do as_routes end
+
   resources :stories do as_routes end
 
   resources :products
