@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111107213921) do
+ActiveRecord::Schema.define(:version => 20111108205645) do
 
   create_table "features", :force => true do |t|
     t.integer  "project_id"
@@ -52,6 +52,23 @@ ActiveRecord::Schema.define(:version => 20111107213921) do
     t.integer  "duration"
     t.date     "started_at"
     t.date     "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stories", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "sub_title"
+    t.integer  "part"
+    t.integer  "protagonist"
+    t.integer  "antagonist"
+    t.integer  "location_id"
+    t.integer  "event_id"
+    t.integer  "theme"
+    t.integer  "iching_id"
+    t.integer  "year_sign_id"
+    t.integer  "month_sign_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,6 @@
 Schatter::Application.routes.draw do
+  resources :stories do as_routes end
+
   resources :products
 
   resources :organizations do as_routes end
