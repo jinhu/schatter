@@ -1,11 +1,11 @@
 Given /^a user: "(.*)" exists with email: "(.*)"$/ do |name, email|
   User.create(:name => name, :email=> email, :password=>'xxxxxxx')
 end
-Given /^a user is logged in as "(.*)"$/ do |login|
+Given /^a user is|I am logged in as "(.*)"$/ do |login|
   @current_user = User.create!(
     :name => login,
-    :password => 'generic',
-    :password_confirmation => 'generic',
+    :password => 'xxxxxxx',
+    :password_confirmation => 'xxxxxxx',
     :email => "#{login}@example.com"
   )
 
@@ -16,16 +16,9 @@ Given /^a user is logged in as "(.*)"$/ do |login|
   fill_in("email", :with => "#{login}@example.com") 
   fill_in("password", :with => 'xxxxxxx') 
   click_button("Log in")
-  response.body.should =~ /Logged/m  
-end
+  #response.body.should =~ /Logged/m  
 
-When /^I am logged in as "([^"]*)"$/ do |email|
-  Given %(I fill in "#{email}" for "Username")
-  And %(I fill in "password" for "Password")
-  And %(I press "Login")
-  And %(I should see "#{email}" within the header)
 end
-
 
 Given /^no stories on server for "([^"]*)"$/ do |name|
   u = User.where(:name=>name).first

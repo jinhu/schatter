@@ -11,8 +11,11 @@ def create
      render  :layout=> !request.xhr?
   else
     render :new,  :layout=> !request.xhr?
-
   end
+end
+
+def dashboard
+  
 end
 
 end

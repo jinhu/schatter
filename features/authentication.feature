@@ -34,22 +34,23 @@ Feature: Authentication
     When I fill in "email" with "yin@ch.hu"
     And I press "Log in"
     Then I should not see "Signed in successfully."
-    When I fill in "password:" with "xxxxxxy"
+    When I fill in "email" with "yin@ch.hu"
+    And I fill in "password" with "xxxxxxy"
     And I press "Log in"
     Then I should not see "Signed in successfully."
 
-  Scenario: log in with a valid email and password
-    Given I am logged in as "yin@ch.hu"
-    When I follow /logout
-    And I go to the home page
-    Then I should see "Login"
+  Scenario: log out 
+    Given I am logged in as "yinoch"
+    When I go to the home page
+    And I follow "Log out"
+    Then I should see "Log in"
 
 
   Scenario: create an account
-    When I am on the /signup page
-    And I fill in "email:" with "ed@n.hu"
-    And I fill in "password:" with "xxxxxxx"
-    And I fill in "Confirm password:" with "xxxxxxx"
-    And I press "Signup"
+    When I am on /signup
+    And I fill in "user_email" with "ed@n.hu"
+    And I fill in "user_password" with "xxxxxxx"
+    And I fill in "user_password_confirmation" with "xxxxxxx"
+    And I press "sign up"
     Then I should see "created."
 
