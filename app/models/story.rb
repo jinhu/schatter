@@ -11,6 +11,9 @@ class Story < ActiveRecord::Base
   belongs_to :element, :class_name => 'Kind', :foreign_key =>'element_id',:conditions=>"category='element'"
   belongs_to :event, :class_name => 'Kind', :foreign_key =>'event_id',:conditions=>"category='event'"
 
+  def authorized_for_show
+    current_user == user
+  end
 end
 
 
