@@ -1,0 +1,42 @@
+<% url_options ||= params_for(:action => :update)
+   xhr = request.xhr?
+   multipart ||= false
+   columns ||= nil
+%>
+<%=
+options = {:id => element_form_id(:action => :update),
+           :multipart => multipart,
+           :class => "as_form #{form_action.to_s}",
+           :method => :put,
+           'data-loading' => true}
+
+if xhr && multipart # file_uploads
+  form_remote_upload_tag url_options.merge({:iframe => true}), options
+else
+  options[:remote] = true if xhr && !multipart
+  form_tag url_options, options
+end
+-%>
+
+  <h4><%= Setting.model_name.human(:count => 2) -%></h4>
+
+  <div id="<%= element_messages_id(:action => :update) %>" class="messages-container">
+<% if request.xhr? -%>
+    <% records = @error_records || Array(@record)
+       records.each do |record| %>
+       <%= active_scaffold_error_messages_for record, :object_name => "#{record.class.model_name.human.downcase}#{record.new_record? ? '' : ": #{record.to_label}"}" %>
+    <% end   %>
+<% else -%>
+    <%= render :partial => 'form_messages' %>
+<% end -%>
+  </div>
+
+  <%= render :partial => 'form', :locals => { :columns => columns, :form_action => :update } %>
+
+  <p class="form-footer">
+    <%= submit_tag as_(form_action), :class => "submit" %>
+    <%= loading_indicator_tag(:action => :update, :id => params[:id]) %>
+  </p>
+
+</form>
+<%= javascript_tag("ActiveScaffold.focus_first_element_of_form('#{element_form_id(:action => :update)}');") %>

@@ -1,0 +1,13 @@
+= form_tag sessions_path do
+  %header= link_to "Log out", logout_path,:format=>:json, :class=>'back'
+  %section.error_messages
+    - unless flash[:alert].blank?
+      #alert= flash[:alert]
+  %ul.edit.round
+    %li= text_field_tag :email, params[:email], :placeholder=>:email
+    %li= password_field_tag :password, params[:password], :placeholder=>:password
+    %li
+      Remember me
+      %span.toggle= check_box_tag :remember_me, 1, params[:remember_me]
+    %li=submit_tag "Log in"
+  = link_to "login", login_path, :class=>'whiteButton', :id=>'login'

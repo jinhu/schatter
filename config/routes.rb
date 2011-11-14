@@ -1,4 +1,18 @@
 Schatter::Application.routes.draw do
+  resources :chapters do as_routes end
+
+  resources :people do as_routes end
+
+  resources :tasks do as_routes end
+
+  resources :kinds do as_routes end
+
+  resources :stories do as_routes end
+
+  resources :products
+
+  resources :organizations do as_routes end
+
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
@@ -68,5 +82,6 @@ Schatter::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+   match ':controller(/:action(/:id(.:format)))'
+   match "/application.manifest" => Rails::Offline
 end

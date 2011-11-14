@@ -1,0 +1,14 @@
+%section
+  .title "Grocery List"
+  = form_for Kind.new do |f|
+    %p
+      = f.text_field :name
+      = f.text_field :category
+      = f.submit "Add"
+  end
+  %script#item_template{ :type=>"text/html"}
+    %li ${item.name}
+%ol{ id=>"items"}
+  %li em Loading items...
+
+

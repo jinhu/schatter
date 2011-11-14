@@ -1,0 +1,16 @@
+@controller="projects" if !@controller
+%aside#crud
+  %header
+    %a.back{:href => "#"} Back
+  %ul
+    %li 
+      = link_to "Create",   controller=>@controller, :action=>'create'
+    %li 
+      = link_to "Read", controller=>@controller, :action=>'show'
+    %li
+      = link_to "Update", controller=>@controller, :action=>'update'
+    %li
+      = link_to "Delete", controller=>@controller, :action=>'delete'
+    %li
+      = link_to "List", controller=>@controller, :action=>'list'
+ 

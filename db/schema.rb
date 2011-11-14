@@ -10,63 +10,108 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111028112735) do
+ActiveRecord::Schema.define(:version => 20111113190743) do
 
-  create_table "activiteits", :force => true do |t|
+  create_table "chapters", :force => true do |t|
+    t.integer  "story_id"
     t.string   "name"
-    t.integer  "time"
-    t.integer  "complexity"
-    t.integer  "dependancy"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "activities", :force => true do |t|
-    t.string   "name"
-    t.integer  "time"
-    t.integer  "complexity"
-    t.integer  "dependancy"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "articles", :force => true do |t|
-    t.string   "title"
+    t.integer  "order"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "features", :force => true do |t|
+    t.integer  "project_id"
     t.string   "name"
-    t.string   "senario"
+    t.integer  "kind_id"
     t.text     "description"
-    t.integer  "priority"
+    t.integer  "complexity"
+    t.integer  "dependancy"
     t.date     "due"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "machines", :force => true do |t|
-    t.string   "name"
-    t.string   "kind"
+  create_table "images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "offertes", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
+  create_table "kinds", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "organizations", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.integer  "race_id"
+    t.integer  "job_id"
+    t.integer  "age_id"
+    t.integer  "color_id"
+    t.integer  "mbti_id"
+    t.integer  "place_id"
+    t.integer  "year_id"
+    t.integer  "month_id"
+    t.integer  "emotion_id"
+    t.integer  "element_id"
+    t.integer  "belief_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "projects", :force => true do |t|
     t.string   "name"
-    t.string   "kind"
+    t.integer  "kind_id"
     t.integer  "duration"
     t.date     "started_at"
     t.date     "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stories", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "sub_title"
+    t.integer  "part"
+    t.integer  "protagonist"
+    t.integer  "antagonist"
+    t.integer  "location_id"
+    t.integer  "event_id"
+    t.integer  "theme"
+    t.integer  "iching_id"
+    t.integer  "year_sign_id"
+    t.integer  "month_sign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer  "feature_id"
+    t.string   "name"
+    t.integer  "duration"
+    t.integer  "status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,6 +124,7 @@ ActiveRecord::Schema.define(:version => 20111028112735) do
     t.datetime "updated_at"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
+    t.string   "name"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"

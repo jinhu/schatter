@@ -3,7 +3,7 @@ class CreateFeatures < ActiveRecord::Migration
     create_table :features do |t|
       t.integer :project_id
       t.string :name
-      t.string :kind
+      t.integer :kind_id
       t.text :description
       t.integer :complexity
       t.integer :dependancy
