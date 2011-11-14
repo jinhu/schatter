@@ -1,12 +1,12 @@
 Given /^a user: "(.*)" exists with email: "(.*)"$/ do |name, email|
   User.create(:name => name, :email=> email, :password=>'xxxxxxx')
 end
-Given /^a user is|I am logged in as "(.*)"$/ do |login|
+Given /^a user is|I am logged in as "(.*)"$/ do |user|
   @current_user = User.create!(
-    :name => login,
+    :name => user,
     :password => 'xxxxxxx',
     :password_confirmation => 'xxxxxxx',
-    :email => "#{login}@example.com"
+    :email => "#{user}@example.com"
   )
 
   # :create syntax for restful_authentication w/ aasm. Tweak as needed.

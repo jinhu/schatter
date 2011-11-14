@@ -6,17 +6,17 @@ Feature: create story
   The author should be able to fill in the chapters
 
   Background:
-  	Given I am logged in as "yinoch"
-    Given no stories on server for "yinoch"
+  	Given I am logged in as "jin"
+    Given no stories on server for "jin"
     And go to the stories page
 
   Scenario: create a new story
-    When I press "Create new Story"
+    When I follow "Create New"
     Then I should see "Create Story" 
     #the new story form
     When I fill in new story properties
     And I press "Create"
-    Then I should see the story template
+    Then I should see "The fairly tales of Yinoch"
     When I fill in the chapter text 
     Then I should see the next chapter
     When I press finish
