@@ -13,7 +13,7 @@ Feature: create story
   Scenario: create a new story
     When I create a new fairy tale 
     Then I should see "The fairly tales of Yinoch"
-    WHEN I follow chapters 
+    When I follow chapters 
     Then I should see 8 chapter
     When I press chapter 1
     Then I should see "once apon a time"

@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-gem 'activerecord-jdbcsqlite3-adapter'
 
 gem 'jruby-openssl'
 gem 'json'
@@ -19,7 +18,7 @@ gem 'mercury-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'sorcery'
-gem 'active_scaffold'
+gem 'active_scaffold' ,'3.1.6'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -36,21 +35,23 @@ if defined?(JRUBY_VERSION)
 else
   gem 'mysql2'
 end
+  gem 'rack-offline'
+  gem 'execjs'
+  gem 'therubyrhino'
 
 group :test, :development do
   gem 'factory_girl',       '2.0.2'      # 2.0.3 breaks loading factories with a Duplication Error
   gem 'factory_girl_rails', '~> 1.1'
-  gem 'rspec-rails',        '~> 2.6'
+  gem 'rspec-rails',         '2.7.0'
   gem 'cucumber-rails',     '1.0.6'    
   gem 'wirble'
   gem 'simplecov', '>= 0.4.0', :require => false
   gem 'database_cleaner'
   gem 'spork', '> 0.9.0.rc'
-  gem 'guard'
+  gem 'guard', '0.8.8'
   gem 'guard-spork'
   gem 'hpricot'
   gem 'ruby_parser'
-  gem 'rack-offline'
 end
 
 
