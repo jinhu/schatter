@@ -11,13 +11,11 @@ Feature: create story
     And go to the stories page
 
   Scenario: create a new story
-    When I follow "Create New"
-    Then I should see "Create Story" 
-    #the new story form
-    When I fill in new story properties
-    And I press "Create"
+	When I create a new story
     Then I should see "The fairly tales of Yinoch"
-    When I fill in the chapter text 
-    Then I should see the next chapter
-    When I press finish
-    Then I should see read story
+
+    # Then I should see "The fairly tales of Yinoch"
+    # When I fill in the chapter text 
+    # Then I should see the next chapter
+    # When I press finish
+    # Then I should see read story

@@ -10,6 +10,7 @@ class Story < ActiveRecord::Base
   belongs_to :emotion, :class_name => 'Kind', :foreign_key =>'emotion_id',:conditions=>"category='emotion'"
   belongs_to :element, :class_name => 'Kind', :foreign_key =>'element_id',:conditions=>"category='element'"
   belongs_to :event, :class_name => 'Kind', :foreign_key =>'event_id',:conditions=>"category='event'"
+  has_many :chapters
 
   def authorized_for_show
     current_user == user

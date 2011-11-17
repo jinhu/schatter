@@ -1,4 +1,6 @@
 Schatter::Application.routes.draw do
+  resources :chapters do as_routes end
+
   resources :people do as_routes end
 
   resources :tasks do as_routes end
