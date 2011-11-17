@@ -14,7 +14,7 @@ Feature: Authentication
     Given a user: "yinoch" exists with email: "yin@ch.hu"
     When I go to /login
     And I fill in "email" with "yin@ch.hu"
-    And I fill in "password" with "xxxxxxx"
+    And I fill in "password" with "xxxxxxx" 
     And I press "Log in"
     Then I am logged in
     When I go to the home page
