@@ -1,11 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
-# Examples:
-#
-#   Mayor.create(:name => 'Emanuel', :city => cities.first)
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
    kinds = Kind.create([{ :name => 'To do', 	        :category=>'task'    },
    											{ :name => 'Done', 		        :category=>'task'    },
@@ -126,8 +121,39 @@
 
    											])
 
-
-
-
+    people = Person.create([{ :name => 'Yinoch'   },
+                            { :name => 'Eden'     },
+                            { :name => 'Iszu'     },
+                            { :name => 'Jesse'    },
+                            { :name => 'Marsoph'  },
+                            { :name => 'Sanella'  },
+                            { :name => 'Nikulas'  },
+                            { :name => 'Daniel'   },
+                            { :name => 'Joshua'   },
+                            { :name => 'Char'     },
+                            { :name => 'Hujian'   },
+                            { :name => 'Kelou'    },
+                            { :name => 'Jin'      },
+                            { :name => 'Mike'     },
+                            { :name => 'Zen'      },
+                            { :name => 'Yan'      },
+                            { :name => 'Ping'     },
+                            { :name => 'Guan'     },
+                            { :name => 'lic'      },
+                            { :name => 'jolee'    },
+       ])
+# Name
+# Color
+# Element
+# Emotion
+# Mbti
+# Month
+# Place
+# Race
+# Year
+# Created at
+# Updated at
+# @controller="projects" if !@controller
+     users = User.create([{ :name => 'Jin',:password=>'xxxxxxx'   }])
 
 

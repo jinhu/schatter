@@ -9,30 +9,21 @@ Feature: create story
   	Given I am logged in as "jin"
     Given no stories on server for "jin"
 
-  Scenario: create a new fairy tale
-    Given I am on the new fairy tale page
-    When I fill in "title" with "Yinoch's fairy tales" 
-    And I fill in "sub title" with "Yinoch and Eden"
-    And I fill in "part" with "1" 
-    And I press create button
-    Then I should see "Yinoch's fairy tales"
-    And I should see "Yinoch and Eden"
-    And I should see "Chapter 1"
-    When I fill in "name" with "Yinoch's fairy tales" 
-    And I fill in "content" with "the chapter text" 
-    And I press create button
-    Then I should see see "Chapter 2"
-    When I press create button
-    Then I should see see "Chapter 3"
-    When I press create button
-    Then I should see see "Chapter 4"
-    When I press create button
-    Then I should see see "Chapter 5"
-    When I press create button
-    Then I should see see "Chapter 6"
-    When I press create button
-    Then I should see see "Chapter 7"
-    When I press create button
-    Then I should see see "Chapter 8"
-    When I press finish
-    Then I should see see "Fin."
+  Scenario: create a new story
+    When I follow "Create New"
+    Then I should see "Create New Story" 
+    When I create a new story 
+
+    # Then I should see "The fairly tales of Yinoch"
+    # When I fill in the chapter text 
+    # Then I should see the next chapter
+    # When I press finish
+    # Then I should see read story
+   When I create a new fairy tale 
+    Then I should see "The fairly tales of Yinoch"
+    When I follow chapters 
+    Then I should see 8 chapter
+    When I press chapter 1
+    Then I should see "once apon a time"
+    When I press chapter 8
+    Then I should see "lives happily ever after"
