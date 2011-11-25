@@ -14,6 +14,9 @@ module NavigationHelpers
     when /^the list of (.*)$/
       "/#{$1}"
 
+    when /^the (new) (.*) page$/
+      "/#{$2.gsub(' ','_')}s/$1"
+
     when /^\/(.*)$/
       "#{$1}"
     # Add more mappings here.
