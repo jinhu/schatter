@@ -1,0 +1,3 @@
+%section
+  =render :partial=>'show'
+  =render :active_scaffold => 'feature', :constraints => {:project_id=>@record.id},:label => 'Feature for Project'	

@@ -1,5 +1,15 @@
 Schatter::Application.routes.draw do
-  resources :products
+  resources :chapters do as_routes end
+
+  resources :people do as_routes end
+
+  resources :tasks do as_routes end
+
+  resources :kinds do as_routes end
+
+  resources :stories do as_routes end
+
+  resources :products,:fairy_tales
 
   resources :organizations do as_routes end
 

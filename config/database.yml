@@ -14,19 +14,23 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test: &test
+test: 
   adapter: mysql
   database: schatter_test
   username: root
-  password: 
+  password: xxxxxxx
   host: localhost
 
 production:
   adapter: mysql
   database: schatter_prod
   username: root
-  password: 
+  password: xxxxxxx
   host: localhost
 
 cucumber:
-  <<: *test
+  adapter: mysql
+  database: schatter_test
+  username: root
+  password: xxxxxxx
+  host: localhost

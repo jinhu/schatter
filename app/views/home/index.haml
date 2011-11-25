@@ -1,9 +1,31 @@
 %section#table
   #book
-    .page
+    .page{:style=>'z-index:1'}
+      .left.side.back.cover.flipped#back_page_cover
+      .right.side.inside.back#back_page_inside  "inside cover"
+    .page{:style=>'z-index:2'}
+      .left.side.side#page_10
+        %p "Stories of Yinoch"
+      .left.side.side#page_9 "Stories of Yinoch"
+    .page{:style=>'z-index:3'}
+      .left.side.side#page_8 "Stories of Yinoch"
+      .left.side.side#page_7 "Stories of Yinoch"
+    .page{:style=>'z-index:4'}
+      .left.side.side#page_6 "Stories of Yinoch"
+      .left.side.side#page_5 "Stories of Yinoch"
+    .page{:style=>'z-index:5'}
+      .left.side.side#page_4 "Stories of Yinoch"
+      .left.side.side#page_3 "Yinoch's Birthday"
+    .page{:style=>'z-index:6'}
       .left.side.side#page_2
-      .left.side.side#page_1 "Stories of Yinoch"
-    .page
-      .left.side.front.inside.flipped#front_page_inside
+        %p
+        %h1 "Stories of Yinoch"
+        %h2 "year 5"
+        %p "long long time ago .... "
+      .left.side.side#page_1
+        .content
+          %h1  "Stories of Yinoch"
+    .page{:style=>'z-index:7'}
+      .left.side.front.inside.flipped#front_page_inside "inside cover"
       .right.side.cover.front#front_page_cover 
     = link_to 'secret', :action=>:secret
