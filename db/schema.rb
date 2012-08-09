@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113190743) do
+ActiveRecord::Schema.define(:version => 20120809140006) do
 
   create_table "chapters", :force => true do |t|
     t.integer  "story_id"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(:version => 20111113190743) do
     t.string   "name"
     t.string   "category"
     t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "oauth_samples", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,23 @@
+%h1 Listing oauth_samples
+
+%table
+  %tr
+    %th Title
+    %th Body
+    %th Tags
+    %th
+    %th
+    %th
+
+  - @oauth_samples.each do |oauth_sample|
+    %tr
+      %td= oauth_sample.title
+      %td= oauth_sample.body
+      %td= oauth_sample.tags
+      %td= link_to 'Show', oauth_sample
+      %td= link_to 'Edit', edit_oauth_sample_path(oauth_sample)
+      %td= link_to 'Destroy', oauth_sample, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Oauth sample', new_oauth_sample_path

@@ -30,7 +30,8 @@ gem 'active_scaffold' ,'3.1.6'
 # gem 'ruby-debug'
  
 if defined?(JRUBY_VERSION)
-  gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbcsqlite3-adapter'
+  #gem 'activerecord-jdbc-adapter'
   gem 'jdbc-mysql', :require => false
 else
   gem 'mysql2'

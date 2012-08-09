@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @oauth_sample.title
+%p
+  %b Body:
+  = @oauth_sample.body
+%p
+  %b Tags:
+  = @oauth_sample.tags
+
+= link_to 'Edit', edit_oauth_sample_path(@oauth_sample)
+\|
+= link_to 'Back', oauth_samples_path
